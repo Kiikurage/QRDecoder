@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF828FAD19C5E566000E1A9C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF828FAC19C5E566000E1A9C /* Cocoa.framework */; };
 		EFBF2E6719C5AE2E00166D3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBF2E6619C5AE2E00166D3B /* Foundation.framework */; };
 		EFBF2E6A19C5AE2E00166D3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBF2E6919C5AE2E00166D3B /* main.m */; };
-		EFBF2E6E19C5AE2E00166D3B /* QRDecoder.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = EFBF2E6D19C5AE2E00166D3B /* QRDecoder.1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -19,18 +19,17 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				EFBF2E6E19C5AE2E00166D3B /* QRDecoder.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EF828FAC19C5E566000E1A9C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EFBF2E6319C5AE2E00166D3B /* QRDecoder */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QRDecoder; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFBF2E6619C5AE2E00166D3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		EFBF2E6919C5AE2E00166D3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EFBF2E6919C5AE2E00166D3B /* main.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EFBF2E6C19C5AE2E00166D3B /* QRDecoder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QRDecoder-Prefix.pch"; sourceTree = "<group>"; };
-		EFBF2E6D19C5AE2E00166D3B /* QRDecoder.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = QRDecoder.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF828FAD19C5E566000E1A9C /* Cocoa.framework in Frameworks */,
 				EFBF2E6719C5AE2E00166D3B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +65,7 @@
 		EFBF2E6519C5AE2E00166D3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF828FAC19C5E566000E1A9C /* Cocoa.framework */,
 				EFBF2E6619C5AE2E00166D3B /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -74,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				EFBF2E6919C5AE2E00166D3B /* main.m */,
-				EFBF2E6D19C5AE2E00166D3B /* QRDecoder.1 */,
+				EFBF2E6C19C5AE2E00166D3B /* QRDecoder-Prefix.pch */,
 				EFBF2E6B19C5AE2E00166D3B /* Supporting Files */,
 			);
 			path = QRDecoder;
@@ -83,7 +84,6 @@
 		EFBF2E6B19C5AE2E00166D3B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EFBF2E6C19C5AE2E00166D3B /* QRDecoder-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -221,6 +221,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QRDecoder/QRDecoder-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -230,6 +234,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QRDecoder/QRDecoder-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -253,6 +261,7 @@
 				EFBF2E7319C5AE2E00166D3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
